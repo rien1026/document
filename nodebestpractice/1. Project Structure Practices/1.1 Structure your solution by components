@@ -1,0 +1,48 @@
+# Structure your Solution by components
+
+## One Paragraph Explainer
+For medium sized apps and above, amonoliths are really bad. 
+중간 크기 혹은 그 이상의 앱의 경우, 모놀리스는 정말 극혐이다.
+
+Having one big software with many dependencies is just hard to reason about and often leads to spaghetti code.
+하나로 된 software와 많은 dependencies는 이해하기 어렵고 종종 코드가 스파게티처럼 꼬이게 된다.
+
+Even smart architects - those who are skilled enough to tame the beast and 'modularize' it - spend great mental effot on design,
+and each change requires carefully evaluating the impact on other dependent objects. 
+모듈화를 겁나 잘하는 쩌는 설계자 조차도 디자인하는데 멘탈 겁나 깎이고, 
+매 번 수정할때 마다 객체간 영향이 없는지 굉장히 조심해야 된다.
+
+The ultimate solution is to develop small software
+:divide the whole stack into self-contained components that don't share files with others,
+each constitutes very few files (e.g. API, service, data access, test, etc.) so that it's very easy to reason about it.
+궁극의 해결책은 작은 software로 개발하는 것이다.
+이해하기 쉽게 component간 파일 공유가 없이 몇 개의 파일(API, service, data access, test 등등)들로 구성되어있는 구조로 만들면 된다.
+
+Some may call this 'microservices' architecture 
+- it's important to understand that microservices are not a spec which you must follow,
+but rather a set of principles.
+이걸 microservices 설계라고 할 수 있는데,
+딱히 무조건 따라야 되는 규격은 아니다.
+그냥 설계 원칙 정도로 이해해도 된다.
+
+You may adopt many principles into a full-blown microservices architecture or adopt only a few.
+아마 너도 많거나 아님 조금이라도 이 원칙들을 따라 microservices를 개발하게 될거다.
+
+Both are good as long as you keep the software complexity low. 
+너가 software를 덜 복잡하게 만들기에 좋을거다.
+
+The very least you should do is create basic borders between components,
+assign a folder in your project root for each business component and mkae it self-contained
+- other components are allowed to consume its functionality only through its public interface or API. 
+최소한 component간에 경계를 만들고, 각 business component를 폴더로 만들어서 독립적인 구조로 만들어야 한다.
+component간에 호출은 public interface나 API를 통해서만 가능하게 해야한다. 
+
+This is the foundation for keeping your components simple,
+avoid dependency hell and pave the way to full-blown microservices in the future once your app grows. 
+이게 너의 component를 간단하게 유지하는 기초다.
+그리고 나중에 너의 app이 운영되면서 dependency 지옥을 피하고 microservice로 유지되는 방법이다. 
+
+
+[https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/projectstructre/breakintcomponents.md]
+
+
